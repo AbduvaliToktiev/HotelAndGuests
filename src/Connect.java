@@ -71,10 +71,11 @@ public class Connect implements WorkHotel {
         PreparedStatement preparedStatement = connection().prepareStatement(sql_rooms);
         System.out.println("Введите id вашего номера");
         int idRoom = sc.nextInt();
-        preparedStatement.setInt(1, idRoom);
+        preparedStatement.setInt(3, idRoom);
         System.out.println("Дата вашего бронирования: {dd/MM/YYYY} например {08/12/1999}");
-        preparedStatement.setDate(2, readDate());
+        preparedStatement.setDate(1, readDate());
         System.out.println("До какого числа вы бранируете: {dd/MM/YYYY} например {08/12/1999}");
-        preparedStatement.setDate(3, readDate());
+        preparedStatement.setDate(2, readDate());
+        preparedStatement.executeUpdate();
     }
 }
